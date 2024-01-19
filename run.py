@@ -70,7 +70,96 @@ class GameBoard:
             print("%d|%s|" % (row_number, "|".join(row)))
             row_number += 1
 
- """
+class Warship:
+    """
+    Class that stores the values needed to generate the ships.
+    """
+
+    def __init__(self, board):
+        self.board = board
+
+    def generate_fleet(self):
+        """
+        For statement loops through the board co-ordinate lists.
+        Generates random integers and assigns 'X' as a ship to each.
+        Integers translated into co-ordinates and a ship is placed.
+        """
+        for i in range(8):
+            self.x_row, self.y_col = random.randint(0, 8), random.randint(0, 8)
+            while self.board[self.x_row][self.y_col] == "X":
+                self.x_row = random.randint(0, 8)
+                self.y_col = random.randint(0, 8)
+            self.board[self.x_row][self.y_col] = "X"
+        return self.board
+    def user_fire_mission(self):
+        """
+        Takes the user input and checks for validation.
+        Assigns the shot to a co-ordinate and checks for hit/miss/sink.
+        Feeds back to user.
+        """
+        try:
+            y_col = input("Enter Co-Ordinate (A-I): ").upper()
+            if y_col:
+                while y_col not in "ABCDEFGHI":
+                    print("Invalid co-ordinate. Enter a letter A-I.")
+                    y_col = input("Enter Co-Ordinate (A-I): ").upper()
+                    continue
+            else:
+                while not y_col:
+                    print("Empty Input. Enter a letter A-I.")
+                    y_col = input("Enter Co-Ordinate (A-I): ").upper()
+                    while y_col not in "ABCDEFGHI":
+                        print("Invalid co-ordinate. Enter a letter A-I.")
+                        y_col = input("Enter Co-Ordinate (A-I): ").upper()
+                    continue
+            x_row = input("Enter Co-Ordinate (1-9): ")
+            if x_row:
+                while x_row not in "123456789":
+                    print("Invalid co-ordinate. Enter a number 1-9.")
+                    x_row = input("Enter Co-Ordinate (1-9): ")
+                    continue
+            else:
+                while not x_row:
+                    print("Empty Input. Enter a number 1-9.")
+                    x_row = input("Enter Co-Ordinate (1-9): ")
+                    while x_row not in "123456789":
+                        print("Invalid co-ordinate. Enter a number 1-9.")
+                        x_row = input("Enter Co-Ordinate (1-9): ")
+                    continue
+            return int(x_row) - 1, GameBoard.co_ordinates()[y_col]
+        except ValueError and KeyError:
+            print("Not a valid input. Enter a letter or a number.")
+            return self.user_fire_mission()
+
+    def enemy_fire_mission(self):
+        """
+        Generates computer shot.
+        Takes co-ordinates from a random choice of letters and integers.
+        """
+        y_col = random.choice([
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I"
+        ]).upper()
+        x_row = random.randint(0, 8)
+        return int(x_row) - 1, GameBoard.co_ordinates()[y_col]
+
+    def count_damaged_ships(self):
+        damaged_ships = 0
+        for row in self.board:
+            for column in row:
+                if column == "X":
+                    damaged_ships += 1
+        return damaged_ships
+
+def run_game():
+    """
     Main function.
     Generates board and ships.
     Incorporates a turn limit.
