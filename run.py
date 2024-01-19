@@ -227,3 +227,18 @@ def run_game():
                 print("The enemy have run out of missiles.")
                 GameBoard.generate_board(enemy_target_board)
     game_over()
+
+
+    def main():
+      """
+    Run all functions.
+    """
+    new_old = login.login()
+    login.check_login(new_old)
+    main_screen()
+    run_game()
+
+    main()
+
+if __name__ == "__main__":
+    main()
