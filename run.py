@@ -29,10 +29,6 @@ def main_screen():
     print("  |                                                                            / ")
     print("   \_________________________________________________________________________|")
   
-
-------------------------------------------------
-
-
     print("         _ __        _   _   _           _     _   ")
     print("        |  _ \      | | | | | |         | |   (_) ")
     print("        | |_)/  __ _| |_| |_| | ___  ___| |__  _ _ __   ___ ")
@@ -41,6 +37,38 @@ def main_screen():
     print("        |_.__/ \__,_|\__|\__|_|\___||___/_| |_|_| .__/ |___/ ")
     print("                                                | |   ")
     print("                                                |_| ") 
+
+class GameBoard:
+    """
+    Stores the values needed to generate the game board.
+    Dictionary stores letter/number values for co-ordinates.
+    Stores values for a board outline for user visuals.
+    """
+
+    def __init__(self, board):
+        self.board = board
+
+    def co_ordinates():
+        co_ordinates = {
+            "A": 0,
+            "B": 1,
+            "C": 2,
+            "D": 3,
+            "E": 4,
+            "F": 5,
+            "G": 6,
+            "H": 7,
+            "I": 8,
+        }
+        return co_ordinates
+
+    def generate_board(self):
+        print("  A B C D E F G H I ")
+        print("  x-x-x-x-x-x-x-x-x ")
+        row_number = 1
+        for row in self.board:
+            print("%d|%s|" % (row_number, "|".join(row)))
+            row_number += 1
 
  """
     Main function.
