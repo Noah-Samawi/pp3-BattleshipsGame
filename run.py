@@ -10,6 +10,38 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("user_data_sheet")
 
+def main_screen():
+    """
+    A function to generate the main screen before the game starts.
+    ASCII art dashboard and asks player to start game.
+    """
+    print("                                       |")
+    print("                                       |\/")
+    print("                                       ---")
+    print("                                       / | [")
+    print("                                !      | |||")
+    print("                              _/|     _/|-++'")
+    print("                          +  +--|    |--|--|_ |-")
+    print("                       { /|__|  |/\__|  |--- |||__/")
+    print("                      +---------------___[}-_===_.'_")
+    print("                  ____`-' ||___-{]_| _[}-  |     |_[___\==--            \/   _")
+    print("   __..._____--==/___]_|__|_____________________________[___\==--____,------' .7")
+    print("  |                                                                            / ")
+    print("   \_________________________________________________________________________|")
+  
+
+------------------------------------------------
+
+
+    print("         _ __        _   _   _           _     _   ")
+    print("        |  _ \      | | | | | |         | |   (_) ")
+    print("        | |_)/  __ _| |_| |_| | ___  ___| |__  _ _ __   ___ ")
+    print("        | '_ \ / _` | __| __| |/ _ \/ __| '_ \| | '_ \ / __| ")
+    print("        | |_) | (_| | |_| |_| |  __/\__ \ | | | | |_) |\__ \ ")
+    print("        |_.__/ \__,_|\__|\__|_|\___||___/_| |_|_| .__/ |___/ ")
+    print("                                                | |   ")
+    print("                                                |_| ") 
+
  """
     Main function.
     Generates board and ships.
