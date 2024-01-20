@@ -55,3 +55,44 @@ def check_login(new_old: str):
         return False
 
     return True
+
+    def new_user():
+    """
+    Prompts user to choose their username and password.
+    Takes user input and stores them in the google spreadsheet.
+    """
+    un_login = SHEET.worksheet("username")
+    pw_login = SHEET.worksheet("password")
+    new_un = input("Enter a username:\n")
+    un_lst = str.split(new_un)
+    un_login.append_row(un_lst)
+    print(f"Welcome Admiral {new_un}")
+    new_pw = input("Enter a password:\n")
+    pw_lst = str.split(new_pw)
+    pw_login.append_row(pw_lst)
+    print("Password stored.")
+
+
+def old_user():
+    """
+    Prompts a returning user to enter their username and password.
+    Checks user input against values stored in the spreadsheet.
+    Invalid inputs cause users to return to login step.
+
+    """
+    un_login = SHEET.worksheet("username")
+    pw_login = SHEET.worksheet("password")
+    old_un = input("Enter your username:\n")
+    check_un = un_login.find(old_un)
+    if check_un is None:
+        print("Username not found. Check your credentials and try again.")
+        login()
+    else:
+        print(f"Welcome back Admiral {old_un}.")
+    old_pw = input("Enter your password:\n")
+    check_pw = pw_login.find(old_pw)
+    if check_pw is None:
+        print("Password invalid. Check your credentials and try again.")
+        login()
+    else:
+        print("Password verified.")
