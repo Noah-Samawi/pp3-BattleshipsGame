@@ -248,6 +248,7 @@ def run_game():
                 GameBoard.generate_board(enemy_target_board)
     game_over()
 
+
 def game_over() -> str:
     """
     Runs when all ships sunk.
@@ -265,8 +266,9 @@ def game_over() -> str:
         print("Invalid Input. Type in Y/N.")
         game_over()
 
-    def main():
-      """
+
+def main():
+    """
     Run all functions.
     """
     new_old = login.login()
@@ -274,7 +276,8 @@ def game_over() -> str:
     main_screen()
     run_game()
 
-    main()
+
+main()
 
 if __name__ == "__main__":
     main()
