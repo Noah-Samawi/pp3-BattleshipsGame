@@ -48,15 +48,6 @@ def main_screen():
     print("   __..._____--==/___]_|__|_____________________________[___\==--____,------' .7")
     print("  |                                                                            / ")
     print("   \_________________________________________________________________________|")
-  
-    print("         _ __        _   _   _           _     _   ")
-    print("        |  _ \      | | | | | |         | |   (_) ")
-    print("        | |_)/  __ _| |_| |_| | ___  ___| |__  _ _ __   ___ ")
-    print("        | '_ \ / _` | __| __| |/ _ \/ __| '_ \| | '_ \ / __| ")
-    print("        | |_) | (_| | |_| |_| |  __/\__ \ | | | | |_) |\__ \ ")
-    print("        |_.__/ \__,_|\__|\__|_|\___||___/_| |_|_| .__/ |___/ ")
-    print("                                                | |   ")
-    print("                                                |_| ") 
 
 class GameBoard:
     """
@@ -90,6 +81,7 @@ class GameBoard:
             print("%d|%s|" % (row_number, "|".join(row)))
             row_number += 1
 
+
 class Warship:
     """
     Class that stores the values needed to generate the ships.
@@ -111,6 +103,7 @@ class Warship:
                 self.y_col = random.randint(0, 8)
             self.board[self.x_row][self.y_col] = "X"
         return self.board
+
     def user_fire_mission(self):
         """
         Takes the user input and checks for validation.
@@ -177,6 +170,7 @@ class Warship:
                 if column == "X":
                     damaged_ships += 1
         return damaged_ships
+
 
 def run_game():
     """
