@@ -1,3 +1,12 @@
+# imports the inbuilt python random module
+import random
+# imports login.py file
+import login
+
+# imports google spreadhseet and google credentials APIs
+import gspread
+from google.oauth2.service_account import Credentials
+
 # Global variables assigned to allow access through Google APIs to gspread.
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -8,7 +17,11 @@ SCOPE = [
 CREDS = Credentials.from_service_account_file("creds.json")
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open("user_data_sheet")
+SHEET = GSPREAD_CLIENT.open("Battleships")
+
+username = SHEET.worksheet('username')
+data = username.get_all_values()
+print(data)
 
 def main_screen():
     """
