@@ -1,3 +1,7 @@
+# Elements of this code were inspired by Knowledge Mavens on YouTube
+# (https://www.youtube.com/watch?v=xz9GrOwQ_5E)
+# Code elements were modified for additional functionality.
+
 # imports the inbuilt python random module
 import random
 # imports login.py file
@@ -23,11 +27,14 @@ username = SHEET.worksheet('username')
 data = username.get_all_values()
 print(data)
 
+
+
 def main_screen():
     """
     A function to generate the main screen before the game starts.
     ASCII art dashboard and asks player to start game.
     """
+
     print("                                       |")
     print("                                       |\/")
     print("                                       ---")
@@ -241,6 +248,22 @@ def run_game():
                 GameBoard.generate_board(enemy_target_board)
     game_over()
 
+def game_over() -> str:
+    """
+    Runs when all ships sunk.
+    Prompts user to restart or exit.
+    """
+    print("GAME OVER")
+    retry = input("Would you like to play again? Y/N: \n").lower()
+
+    if str(retry) == 'y':
+        run_game()
+    elif str(retry) == 'n':
+        print("Thank you Admiral. You are relieved of your command.")
+        quit()
+    elif str(retry) not in {"y", "n"}:
+        print("Invalid Input. Type in Y/N.")
+        game_over()
 
     def main():
       """
