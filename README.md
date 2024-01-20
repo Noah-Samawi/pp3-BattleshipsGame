@@ -1,32 +1,58 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Battleships
 
-Welcome,
+Welcome to the Battleships is a game of logic, with players attempting to sink each others fleet by guessing co-ordinates.
+This version uses a a board generated using Python lists and incorporates a logic engine to allow the computer to fire back at the user.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+(Developer: Stuart Wall)
+![Start screen]()
 
-## Reminders
+[Live webpage]()
+## Table of Content
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+- [Project Goals](#project-goals)
+    . [User Goals](#user-goals)
+    . [Site Owner Goals](#site-owner-goals)
+- [User Experience](#user-experience)
+    . [Target Audience](#target-audience)
+    . [User Requirements and Expectations](#user-requirements-and-expectations)
+    . [User Stories](#user-stories)
+- [Technical Design](#technical-design)
+    . [Flowchart](#flowchart)
+- [Technologies Used](#technologies-used)
+    . [Languages](#languages)
+    . [Frameworks & Tools](#frameworks-&-tools)
+- [Features](#features)
+- [Testing](#validation)
+    . [PEP8 validation](#pep8-validation)
+    . [Testing user stories](#testing-user-stories)
+- [Bugs](#Bugs)
+- [Deployment](#deployment)
+- [Credits](#credits)
+- [Acknowledgments](#acknowledgments)
 
-## Creating the Heroku app
+## Project Goals 
+The project goal is to create a logic game using Python.
+### User Goals
+The application user wants to play a logic game.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+### Site Owner Goals
+The Battleships game is played on grids on which each player's fleet of battleships are marked. The locations of the fleets are concealed from the other player. Players call shots at the other player's ships, and the objective of the game is to destroy the opposing player's fleet.
+The application provides a working battleships game for a single user to play against the computer.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## User Experience
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+### Target Audience
+- Younger users who like playing games.
+- Users who are looking for a game to pass time on during a break.
+- Older users who are looking for a logic challenge.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### User Requirements and Expectations
 
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
+### User Stories
+- To create a personal username.
+- To be able to return to the game with my username and password.
+- To have an immersive experience.
+- To have real-time feedback when playing the game.
+- To be able to play the game against a computer opponent.
+- To be told when the game has been won or lost.
+- To be able to easily replay the game if wanted.
