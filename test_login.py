@@ -1,5 +1,5 @@
 # Code inspired by Corey Schafer's unittest video:
-# (https://www.youtube.com/watch?v=6tNS--WetLI)
+# (https://www.youtube.com/watch?v=1Lfv5tUGsn8)
 # code modified for functionality of this project.
 # imports unittest module.
 import unittest

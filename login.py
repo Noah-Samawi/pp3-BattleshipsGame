@@ -31,9 +31,9 @@ def login() -> str:
         new_old = input("Are you a new user? Y/N \n").lower()
 
         if str(new_old) == "y":
-            new_user()
-        elif str(new_old) == "n":
             old_user()
+        elif str(new_old) == "n":
+            new_user()
 
         if check_login(new_old):
             break
