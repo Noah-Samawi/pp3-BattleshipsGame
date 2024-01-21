@@ -2,7 +2,7 @@
 import random
 
 # imports google spreadhseet and google credentials APIs
-import gspread 
+import gspread
 from google.oauth2.service_account import Credentials
 
 # Global variables assigned to allow access through Google APIs to gspread.
@@ -16,7 +16,7 @@ CREDS = Credentials.from_service_account_file("creds.json")
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("user_data_sheet")
-# spreadsheet_ID = "1yxioI50CWpBggKnJvuZIBQLjkqSvaTdJQZ0VcVH4a0Y
+
 
 def login() -> str:
     """
@@ -56,8 +56,9 @@ def check_login(new_old: str):
 
     return True
 
-    def new_user():
-       """
+
+def new_user():
+    """
     Prompts user to choose their username and password.
     Takes user input and stores them in the google spreadsheet.
     """
