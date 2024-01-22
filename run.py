@@ -4,16 +4,10 @@
 
 # imports the inbuilt python random module
 import random
-# imports login.py file
-import login
-
 # imports google spreadhseet and google credentials APIs
 import gspread
 from google.oauth2.service_account import Credentials
 
-client = gspread.service_account(filenane='creds.json')
-wb_1 = client.open('WB1')
-wb_2 = client.open('WB2')
 
 # Global variables assigned to allow access through Google APIs to gspread.
 SCOPE = [
@@ -27,19 +21,11 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("user_data")
 
-username = SHEET.worksheet('username')
-data = username.get_all_values()
-print(data)
-
-
-
 def main_screen():
     """
     A function to generate the main screen before the game starts.
     ASCII art dashboard and asks player to start game.
     """
-
-    
     
     print("                              _/|     _/|-++'")
     print("                          +  +--|    |--|--|_ |-")
@@ -276,12 +262,8 @@ def main():
     """
     Run all functions.
     """
-    new_old = login.login()
-    login.check_login(new_old)
     main_screen()
     run_game()
-
-
 main()
 
 if __name__ == "__main__":
