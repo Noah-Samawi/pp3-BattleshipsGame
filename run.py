@@ -11,6 +11,10 @@ import login
 import gspread
 from google.oauth2.service_account import Credentials
 
+client = gspread.service_account(filenane='creds.json')
+wb_1 = client.open('WB1')
+wb_2 = client.open('WB2')
+
 # Global variables assigned to allow access through Google APIs to gspread.
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -21,7 +25,7 @@ SCOPE = [
 CREDS = Credentials.from_service_account_file("creds.json")
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open("user_data_sheet")
+SHEET = GSPREAD_CLIENT.open("user_data")
 
 username = SHEET.worksheet('username')
 data = username.get_all_values()
