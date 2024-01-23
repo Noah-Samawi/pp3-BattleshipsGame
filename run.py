@@ -62,7 +62,7 @@ class GameBoard:
         self.board = board
 
 
-
+    @staticmethod
     def co_ordinates():
         co_ordinates = {
             "A": 0,
@@ -94,22 +94,24 @@ class Warship:
 
     def __init__(self, board):
         self.board = board
-
-    def generate_fleet(self):
+    @staticmethod
+    def generate_fleet(board):
         """
         For statement loops through the board co-ordinate lists.
         Generates random integers and assigns 'X' as a ship to each.
         Integers translated into co-ordinates and a ship is placed.
         """
+    
         for i in range(8):
-            self.x_row, self.y_col = random.randint(0, 8), random.randint(0, 8)
-            while self.board[self.x_row][self.y_col] == "X":
-                self.x_row = random.randint(0, 8)
-                self.y_col = random.randint(0, 8)
-            self.board[self.x_row][self.y_col] = "X"
-        return self.board
-
-    def user_fire_mission(self):
+            x_row, y_col = random.randint(0, 8), random.randint(0, 8)
+            while board[x_row][y_col] == "X":
+                x_row = random.randint(0, 8)
+                y_col = random.randint(0, 8)
+            board[x_row][y_col] = "X"
+        return board
+    
+    @staticmethod
+    def user_fire_mission():
         """
         Takes the user input and checks for validation.
         Assigns the shot to a co-ordinate and checks for hit/miss/sink.
@@ -117,60 +119,36 @@ class Warship:
         """
         try:
             y_col = input("Enter Co-Ordinate (A-I): ").upper()
-            if y_col:
-                while y_col not in "ABCDEFGHI":
-                    print("Invalid co-ordinate. Enter a letter A-I.")
-                    y_col = input("Enter Co-Ordinate (A-I): ").upper()
-                    continue
-            else:
-                while not y_col:
-                    print("Empty Input. Enter a letter A-I.")
-                    y_col = input("Enter Co-Ordinate (A-I): ").upper()
-                    while y_col not in "ABCDEFGHI":
-                        print("Invalid co-ordinate. Enter a letter A-I.")
-                        y_col = input("Enter Co-Ordinate (A-I): ").upper()
-                    continue
-            x_row = input("Enter Co-Ordinate (1-9): ")
-            if x_row:
-                while x_row not in "123456789":
-                    print("Invalid co-ordinate. Enter a number 1-9.")
-                    x_row = input("Enter Co-Ordinate (1-9): ")
-                    continue
-            else:
-                while not x_row:
-                    print("Empty Input. Enter a number 1-9.")
-                    x_row = input("Enter Co-Ordinate (1-9): ")
-                    while x_row not in "123456789":
-                        print("Invalid co-ordinate. Enter a number 1-9.")
-                        x_row = input("Enter Co-Ordinate (1-9): ")
-                    continue
-            return int(x_row) - 1, GameBoard.co_ordinates()[y_col]
-        except ValueError and KeyError:
-            print("Not a valid input. Enter a letter or a number.")
-            return self.user_fire_mission()
+            while y_col not in "ABCDEFGHI":
+                print("Invalid co-ordinate. Enter a letter A-I.")
+                y_col = input("Enter Co-Ordinate (A-I): ").upper()
 
-    def enemy_fire_mission(self):
+            x_row = input("Enter Co-Ordinate (1-9): ")
+            while x_row not in "123456789":
+                print("Invalid co-ordinate. Enter a number 1-9.")
+                x_row = input("Enter Co-Ordinate (1-9): ")
+
+            return int(x_row) - 1, GameBoard.co_ordinates()[y_col]
+
+        except ValueError or KeyError:
+            print("Not a valid input. Enter a letter or a number.")
+            return Warship.user_fire_mission()
+
+    @staticmethod
+    def enemy_fire_mission():
         """
         Generates computer shot.
         Takes co-ordinates from a random choice of letters and integers.
         """
-        y_col = random.choice([
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I"
-        ]).upper()
+        y_col = random.choice(["A", "B", "C", "D", "E", "F", "G", "H", "I"]).upper()
         x_row = random.randint(0, 8)
-        return int(x_row) - 1, GameBoard.co_ordinates()[y_col]
+        return int(x_row), GameBoard.co_ordinates()[y_col]
 
-    def count_damaged_ships(self):
+
+    @staticmethod
+    def count_damaged_ships(board):
         damaged_ships = 0
-        for row in self.board:
+        for row in board:
             for column in row:
                 if column == "X":
                     damaged_ships += 1
@@ -184,36 +162,37 @@ def run_game():
     Incorporates a turn limit.
     Prompts user for input and provides feedback on turn results.
     """
-    enemy_board = GameBoard([[" "] * 9 for i in range(9)])
-    enemy_target_board = GameBoard([[" "] * 9 for i in range(9)])
-    user_board = GameBoard([[" "] * 9 for i in range(9)])
-    user_target_board = GameBoard([[" "] * 9 for i in range(9)])
+    enemy_board = [[" "] * 9 for _ in range(9)]
+    enemy_target_board = GameBoard([[" "] * 9 for _ in range(9)])
+    user_board = [[" "] * 9 for _ in range(9)]
+    user_target_board = GameBoard([[" "] * 9 for _ in range(9)])
+
     Warship.generate_fleet(enemy_board)
     Warship.generate_fleet(user_board)
-    # turn counter
+
     missiles = 32
     enemy_missiles = 32
+
     while missiles > 0:
-        user_target_board.generate_board("User Target")
-        enemy_target_board.generate_board("Enemy Target")
-        # get user input
-        user_x_row, user_y_col = Warship.user_fire_mission(object)
-        # checks if input is valid
+        enemy_target_board.generate_board("Enemy Target")  # Use instance method here
+        user_target_board.generate_board("User Target")  # Use instance method here
+
+        user_x_row, user_y_col = Warship.user_fire_mission()
         while (
             user_target_board.board[user_x_row][user_y_col] == "-"
             or user_target_board.board[user_x_row][user_y_col] == "X"
         ):
             print("You have already fired on that location. Choose another.")
-            user_x_row, user_y_col = Warship.user_fire_mission(object)
-        # check for hit or miss
-        if enemy_board.board[user_x_row][user_y_col] == "X":
+            user_x_row, user_y_col = Warship.user_fire_mission()
+
+        if enemy_board[user_x_row][user_y_col] == "X":
             print("Direct hit! Enemy warship sunk!")
             user_target_board.board[user_x_row][user_y_col] = "X"
         else:
             print("Miss. No enemy warship at those co-ordinates.")
             user_target_board.board[user_x_row][user_y_col] = "-"
-        # check victory condition
-        if Warship.count_damaged_ships(user_target_board) == 8:
+
+        if Warship.count_damaged_ships(user_target_board.board) == 8:
             print("Victory! The enemy fleet has been sunk!")
             break
         else:
@@ -221,34 +200,35 @@ def run_game():
             print(f"You have {missiles} missiles remaining.")
             if missiles == 0:
                 print("We are out of missiles. The enemy fleet has escaped.")
-                GameBoard.generate_board(user_target_board)
-        # get computer input
-        enemy_x_row, enemy_y_col = Warship.enemy_fire_mission(object)
+                user_target_board.generate_board("User Target")  # Use instance method here
+
+        enemy_x_row, enemy_y_col = Warship.enemy_fire_mission()
         while (
             enemy_target_board.board[enemy_x_row][enemy_y_col] == "-"
             or enemy_target_board.board[enemy_x_row][enemy_y_col] == "X"
         ):
-            enemy_x_row, enemy_y_col = Warship.enemy_fire_mission(object)
-        # check for computer hit or miss
-        if user_board.board[enemy_x_row][enemy_y_col] == "X":
-            print("Direct hit! The enemy have sunk one of our ships!")
+            enemy_x_row, enemy_y_col = Warship.enemy_fire_mission()
+
+        if user_board[enemy_x_row][enemy_y_col] == "X":
+            print("Direct hit! The enemy has sunk one of our ships!")
             enemy_target_board.board[enemy_x_row][enemy_y_col] = "X"
         else:
-            print("The enemy have missed!")
+            print("The enemy has missed!")
             enemy_target_board.board[enemy_x_row][enemy_y_col] = "-"
-        # check victory condition
-        if Warship.count_damaged_ships(enemy_target_board) == 8:
-            print("Retreat! The enemy have sunk our fleet!")
+
+        if Warship.count_damaged_ships(enemy_target_board.board) == 8:
+            print("Retreat! The enemy has sunk our fleet!")
             break
         else:
             enemy_missiles -= 1
-            if missiles == 0:
-                print("The enemy have run out of missiles.")
-                GameBoard.generate_board(enemy_target_board)
+            if enemy_missiles == 0:
+                print("The enemy has run out of missiles.")
+                enemy_target_board.generate_board("Enemy Target")  # Use instance method here
+
     game_over()
 
 
-def game_over() -> str:
+def game_over():
     """
     Runs when all ships sunk.
     Prompts user to restart or exit.
@@ -256,25 +236,19 @@ def game_over() -> str:
     print("GAME OVER")
     retry = input("Would you like to play again? Y/N: \n").lower()
 
-    if str(retry) == 'y':
-        user_target_board.generate_board("User Target")
-        enemy_target_board.generate_board("Enemy Target")
+    if retry == 'y':
         run_game()
-    elif str(retry) == 'n':
+    elif retry == 'n':
         print("Thank you Admiral. You are relieved of your command.")
         quit()
-    elif str(retry) not in {"y", "n"}:
+    else:
         print("Invalid Input. Type in Y/N.")
         game_over()
 
 
 def main():
-    """
-    Run all functions.
-    """
     main_screen()
     run_game()
-main()
 
 if __name__ == "__main__":
     main()
