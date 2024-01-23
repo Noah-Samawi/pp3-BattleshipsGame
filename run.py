@@ -77,7 +77,8 @@ class GameBoard:
         }
         return co_ordinates
 
-    def generate_board(self):
+    def generate_board(self, label):
+        print(f"\n{label} Board:")
         print("  A B C D E F G H I ")
         print("  x-x-x-x-x-x-x-x-x ")
         row_number = 1
@@ -193,8 +194,8 @@ def run_game():
     missiles = 32
     enemy_missiles = 32
     while missiles > 0:
-        GameBoard.generate_board(user_target_board)
-        GameBoard.generate_board(enemy_target_board)
+        user_target_board.generate_board("User Target")
+        enemy_target_board.generate_board("Enemy Target")
         # get user input
         user_x_row, user_y_col = Warship.user_fire_mission(object)
         # checks if input is valid
@@ -256,6 +257,8 @@ def game_over() -> str:
     retry = input("Would you like to play again? Y/N: \n").lower()
 
     if str(retry) == 'y':
+        user_target_board.generate_board("User Target")
+        enemy_target_board.generate_board("Enemy Target")
         run_game()
     elif str(retry) == 'n':
         print("Thank you Admiral. You are relieved of your command.")
