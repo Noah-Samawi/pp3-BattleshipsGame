@@ -173,35 +173,12 @@ There were no errors or warnings flagged in login.py.
 There were no errors or warnings flagged in test_login.py
 15 yellow warnings were flagged in run.py. These are down to the symbol combinations used in the ASCII art and logo. These are printed direct to the console and not used in any functions.
 
-
-### Testing user stories
-
-- To create a personal username.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Welcome Screen. | Input 'Y' to set up a new profile. Enter username. | Accepts input and stores username to spreadsheet. | Working as implemented. |
-
-<details><summary>Welcome Screen</summary>
-<img src="">
-</details>
-
-- To be able to return to the game with my username and password.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Welcome Screen. | Input 'N' and type in username and password. | Accepts input and checks spreadseet for the input values. | Working as implemented. 
-
-<details><summary>Welcome Screen</summary>
-<img src="">
-</details>
-
 - To have an immersive experience.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Welcome Screen. | Input username. | Console prints message welcoming the user as Admiral. | Working as implemented. |
-| Main Screen. | Shows after user inputs username and password. | Console prints ASCII warship and game logo. | Working as implemented. |
+| Main Screen. | Console prints ASCII warship and game logo. | Working as implemented. |
 | Game Board. | Generates upon game start. | Generates a board similar to the board game. | Working as implemented. |
 | Game Inputs. | User inputs co-ordinates to fire on. | Feedback uses military terminology. | Working as implemented. |
 
@@ -237,12 +214,12 @@ There were no errors or warnings flagged in test_login.py
 </details>
 
 
-5. To be able to play the game against a computer opponent.\
-\
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |\
-|-------------|------------|---------------------|-------------------|\
-| Game Board. |  Generates at the start of the game and refreshes after every turn. | Game board is printed and updated with user and computer inputs after each turn. | Working as implemented. |\
-| Game Inputs. | Computer generates a shot after the user has taken a turn. | Results are updated on the board and printed back to the user after each computer turn. | Working as implemented. |\
+5. To be able to play the game against a computer opponent.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Game Board. |  Generates at the start of the game and refreshes after every turn. | Game board is printed and updated with user and computer inputs after each turn. | Working as implemented. |
+| Game Inputs. | Computer generates a shot after the user has taken a turn. | Results are updated on the board and printed back to the user after each computer turn. | Working as implemented. |
 
 <details><summary>Game Board</summary>
 <img src="">
@@ -309,7 +286,7 @@ You can clone the repository by following these steps:
 - Select if you prefer to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard.
 - Open Git Bash.
 - Change the current working directory to the one where you want the cloned directory.
-- Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY).
+- Type git clone and paste the URL from the clipboard ($ git clone https://github.com/Noah-Samawi/pp3-BattleshipsGame.git.
 - Press Enter to create your local clone.
 
 ## Credits
@@ -320,8 +297,8 @@ You can clone the repository by following these steps:
 ### Code
 - Code Institute Python lessons.
 - Code Institute Love Sandwiches project.
-- Knowledge Mavens https://www.youtube.com/watch?v=alJH_c9t4zw&t=673s\
-- Corey Schafer https://www.youtube.com/watch?v=6tNS--WetLI\
+- Knowledge Mavens https://www.youtube.com/watch?v=xz9GrOwQ_5E
+- Corey Schafer https://www.youtube.com/watch?v=1Lfv5tUGsn8&t=334s
 
 ## Acknowledgments
 I would like to take the opportunity to thank:

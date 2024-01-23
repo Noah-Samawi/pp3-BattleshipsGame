@@ -44,9 +44,13 @@ class GameBoard:
     Dictionary stores letter/number values for co-ordinates.
     Stores values for a board outline for user visuals.
     """
-
+    """
+    
+    """
     def __init__(self, board):
         self.board = board
+
+
 
     def co_ordinates():
         co_ordinates = {
