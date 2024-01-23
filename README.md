@@ -298,15 +298,8 @@ You can clone the repository by following these steps:
 - Code Institute Python lessons.
 - Code Institute Love Sandwiches project.
 - Knowledge Mavens https://www.youtube.com/watch?v=xz9GrOwQ_5E
-- Corey Schafer https://www.youtube.com/watch?v=1Lfv5tUGsn8&t=334s
 
 ## Acknowledgments
 I would like to take the opportunity to thank:
 - My mentor Antonio Rodriguez for his feedback, advice, guidance and support.
 - Jim, Sawyer, and the other fantasic members of Code Institute's community team.}
-
-
-
-
-
-
