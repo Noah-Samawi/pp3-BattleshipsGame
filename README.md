@@ -88,12 +88,9 @@ Have Fun Admiral!
 Now that you know the rules, it's time to lead your fleet to victory! Good luck, Admiral, and may the seas be in your favor!
 ## Technical Design
 
-### Flowchart\
-<details><summary>Login</summary>
-<img src="">
-</details>
+### Flowchart
 <details><summary>Game</summary>
-<img src="">
+<img src="Imags/logic_chart.jpeg">
 </details>
 
 ### Data Modelling
