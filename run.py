@@ -4,7 +4,7 @@
 
 # imports the inbuilt python random module
 import random
-# imports google spreadhseet and google credentials APIs
+# imports google spreadsheet and google credentials APIs
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -21,35 +21,58 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("user_data")
 
+
 def main_screen():
     """
     A function to generate the main screen before the game starts.
     ASCII art dashboard and asks player to start game.
     """
-print("\n\n")
-print("  __        __  _____   _        ____    ___    __  __   _____     _____    ___ ") 
-print("  \\ \\      / / | ____| | |      / ___|  / _ \\  |  \\/  | | ____|   |_   _|  / _ \\ ")
-print("   \\ \\ /\\ / /  |  _|   | |     | |     | | | | | |\\/| | |  _|       | |   | | | |")
-print("    \\ V  V /   | |___  | |___  | |___  | |_| | | |  | | | |___      | |   | |_| |")
-print("     \\_/\\_/    |_____| |_____|  \\____|  \\___/  |_|  |_| |_____|     |_|    \\___/") 
-                                                                                 
-print("  ____       _      _____   _____   _       _____   ____    _   _   ___   ____    ____       ____      _      __  __   _____ ") 
-print(" | __ )     / \\    |_   _| |_   _| | |     | ____| / ___|  | | | | |_ _| |  _ \\  / ___|     / ___|    / \\    |  \\/  | | ____|")
-print(" |  _ \\    / _ \\     | |     | |   | |     |  _|   \\___ \\  | |_| |  | |  | |_) | \\___ \\    | |  _    / _ \\   | |\\/| | |  _|  ")
-print(" | |_) |  / ___ \\    | |     | |   | |___  | |___   ___) | |  _  |  | |  |  __/   ___) |   | |_| |  / ___ \\  | |  | | | |___ ")
-print(" |____/  /_/   \\_\\   |_|     |_|   |_____| |_____| |____/  |_| |_| |___| |_|     |____/     \\____| /_/   \\_\\ |_|  |_| |_____|""\n\n")
+    ascii_art = """
+     _    _ _____ _     _____ ________  ___ _____   _____ _____  
+    | |  | |  ___| |   /  __ \\  _  |  \\/  ||  ___| |_   _|  _  | 
+    | |  | | |__ | |   | /  \\/ | | | .  . || |__     | | | | | | 
+    | |/\\| |  __|| |   | |   | | | | |\\/| ||  __|    | | | | | | 
+    \\  /\\  / |___| |___| \\__/\\ \\_/ / |  | || |___    | | \\ \\_/ / 
+     \\/  \\/\\____/\\_____/\\____/\\___/\\_|  |_|\\____/    \\_/  \\___/  
+                                                                                                                             
+    """
+    # ANSI escape code for blue color
+    blue_color_code = "\033[94m"
+    # ANSI escape code to reset color
+    reset_color_code = "\033[0m"    
+    print(blue_color_code + ascii_art + reset_color_code)
+    
+    ascii_art = """
+ ______                 _            _     _                ______                   
+(____  \\       _   _   | |          | |   (_)              / _____)                  
+ ____)  ) ____| |_| |_ | | ____  ___| | _  _ ____   ___   | /  ___  ____ ____   ____ 
+|  __  ( / _  |  _)  _)| |/ _  )/___) || \\| |  _ \\ /___)  | | (___)/ _  |    \\ / _  )
+| |__)  | ( | | |_| |__| ( (/ /|___ | | | | | | | |___ |  | \\____/( ( | | | | ( (/ / 
+|______/ \\_||_|\\___)___)_|\\____|___/|_| |_|_| ||_/(___/    \\_____/ \\_||_|_|_|_|\\____)
+                                            |_|                                                                                                                                                                                                        
+    """
+    # ANSI escape code for blue color
+    blue_color_code = "\033[94m"
+    # ANSI escape code to reset color
+    reset_color_code = "\033[0m"
+    print(blue_color_code + ascii_art + reset_color_code)
 
-
-print("                                  # #  ( )")
-print("                               ___#_#___|__")
-print("                           _  |____________|  _")
-print("                    _=====| | |            | | |==== _")
-print("              =====| |.---------------------------. | |====")
-print("<--------------------'   .  .  .  .  .  .  .  .   '--------------/")
-print(" \\                                                             /")
-print("   \\___________________________________________________________//" "\n\n")
-
-
+    ascii_art = """
+                                     # #  ( )
+                                  ___#_#___|__
+                              _  |____________|  _
+                       _=====| | |            | | |==== _
+                 =====| |.---------------------------. | |====
+   <--------------------'   .  .  .  .  .  .  .  .   '--------------/
+     \\                                                             /
+      \\_______________________________________________WWS_________/
+ 
+   """
+    # ANSI escape code for red color
+    red_color_code = "\033[91m"
+    # ANSI escape code to reset color
+    reset_color_code = "\033[0m"
+    print(red_color_code + ascii_art + reset_color_code)
 class GameBoard:
     """
     Stores the values needed to generate the game board.
