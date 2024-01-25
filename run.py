@@ -248,6 +248,9 @@ def game_over():
 
 
 def main():
+    """
+    main function"
+    """
     main_screen()
     run_game()
 
