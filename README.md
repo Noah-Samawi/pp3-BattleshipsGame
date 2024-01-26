@@ -4,7 +4,7 @@ Welcome to the Battleships is a game of logic, with players attempting to sink e
 This version uses a a board generated using Python lists and incorporates a logic engine to allow the computer to fire back at the user.
 
 
-![Start screen](doks/start-screem.png)
+![Start screen](Doks/start-screem.png)
 
 [The live link can be found here](https://pp3-battleships-cae1b33910a6.herokuapp.com/)
 ## Table of Content
@@ -84,7 +84,7 @@ Now that you know the rules, it's time to lead your fleet to victory! Good luck,
 ## Technical Design
 
 ### Flowchart
-![Flowchart](doks/logic-diagram.png)
+![Flowchart](Doks/logic-diagram.png)
 
 ## Libraries and Technologies Used
 
@@ -118,29 +118,29 @@ Now that you know the rules, it's time to lead your fleet to victory! Good luck,
 ### Welcome Message
 - Shows a welcome message.
 User Stories covered
-<img src="doks/welcom-message.png">
+<img src="Doks/welcom-message.png">
 
 ### Battleships Screen 
 - Shows an ASCII art warship and logo.
 User Stories covered
-<img src="doks/battleships-screen.png">
+<img src="Doks/battleships-screen.png">
 
 ### Game Board
 - Shows the generated game boards for the user and the computer.
 User Stories covered
-<img src="doks/game_boards.png">
+<img src="Doks/game_boards.png">
 
 ### Game Inputs
 - Allows the user to input their guesses and feedsback the result.
 - Shows the computer's guess.
 User Stories covered: 3, 4, 5
-<img src="doks/game_inputs.png">
+<img src="Doks/game_inputs.png">
 
 ### Game Over
 - Shows the end-of-game state to the user once a victory condition has been met.
 - Allows user to retry the game or to quit the program.
 User Stories covered
-<img src="doks/game_over.png">
+<img src="Doks/game_over.png">
 
 
 ## Testing
@@ -158,7 +158,7 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 ### Code institute Herokuapp
 The python files have all been passed through [Code institute Herokuapp](https://pep8ci.herokuapp.com/#). All python files were checked with no errors reported. See screen show below:
 
-![Code Testing](doks/code-testing.png)
+![Code Testing](Doks/code-testing.png)
 
 1. To have real-time feedback when playing the game.\
 
@@ -169,10 +169,10 @@ The python files have all been passed through [Code institute Herokuapp](https:/
 
 </details>
 <details><summary>Game Board</summary>
-<img src="doks/user_test_1_board.png">
+<img src="Doks/user_test_1_board.png">
 </details>
 <details><summary>Game Inputs</summary>
-<img src="doks/user_test_1_board.png">
+<img src="Doks/user_test_1_board.png">
 </details>
 
 
@@ -184,10 +184,10 @@ The python files have all been passed through [Code institute Herokuapp](https:/
 | Game Inputs. | Computer generates a shot after the user has taken a turn. | Results are updated on the board and printed back to the user after each computer turn. | Working as implemented. |
 
 <details><summary>Game Board</summary>
-<img src="doks/user_test_2_board.png">
+<img src="Doks/user_test_2_board.png">
 </details>
 <details><summary>Game Inputs</summary>
-<img src="doks/user_test_2_input.png">
+<img src="Doks/user_test_2_input.png">
 </details>
 
 
@@ -199,10 +199,10 @@ The python files have all been passed through [Code institute Herokuapp](https:/
 | Game Over. | After a game over condition is met. | Results are updated on the board and printed back to the user after each computer turn. | Working as implemented. |
 
 <details><summary>Game Inputs</summary>
-<img src="doks/user_test_3_inputs.png">
+<img src="Doks/user_test_3_inputs.png">
 </details>
 <details><summary>Game Over</summary>
-<img src="doks/user_test_3_game_over.png">
+<img src="Doks/user_test_3_game_over.png">
 </details>
 
 4. To be able to easily replay the game if wanted.
@@ -213,7 +213,7 @@ The python files have all been passed through [Code institute Herokuapp](https:/
 | Game Over. | After a game over condition is met. User inputs Y or N | Input of Y re-runs the game. Input of N exits the program. | Working as implemented. |
 
 <details><summary>Game Over</summary>
-<img src="doks/user_test_4_replay.png">
+<img src="Doks/user_test_4_replay.png">
 </details>
 
 
