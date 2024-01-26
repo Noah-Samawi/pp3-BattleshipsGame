@@ -89,9 +89,7 @@ Now that you know the rules, it's time to lead your fleet to victory! Good luck,
 ## Technical Design
 
 ### Flowchart
-<details><summary>Game</summary>
-<img src="Imags/logic_chart.jpeg">
-</details>
+![Flowchart](Doks/readme/logic-diagram.png)
 
 ### Data Modelling
 - The data stored in the Google Spreadsheet is a combination of a username and password entered by the user on the login page.
