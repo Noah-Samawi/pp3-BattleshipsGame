@@ -28,25 +28,25 @@ def main_screen():
     ASCII art dashboard and asks player to start game.
     """
     ascii_art = """
-     _    _ _____ _     _____ ________  ___ _____   _____ _____  
-    | |  | |  ___| |   /  __ \\  _  |  \\/  ||  ___| |_   _|  _  | 
-    | |  | | |__ | |   | /  \\/ | | | .  . || |__     | | | | | | 
-    | |/\\| |  __|| |   | |   | | | | |\\/| ||  __|    | | | | | | 
-    \\  /\\  / |___| |___| \\__/\\ \\_/ / |  | || |___    | | \\ \\_/ / 
-     \\/  \\/\\____/\\_____/\\____/\\___/\\_|  |_|\\____/    \\_/  \\___/  
-                                                                                                                             
+     _    _ _____ _     _____ ________  ___ _____   _____ _____
+    | |  | |  ___| |   /  __ \\  _  |  \\/  ||  ___| |_   _|  _  |
+    | |  | | |__ | |   | /  \\/ | | | .  . || |__     | | | | | |
+    | |/\\| |  __|| |   | |   | | | | |\\/| ||  __|    | | | | | |
+    \\  /\\  / |___| |___| \\__/\\ \\_/ / |  | || |___    | | \\ \\_/ /
+     \\/  \\/\\____/\\_____/\\____/\\___/\\_|  |_|\\____/    \\_/  \\___/
+
     """
     # ANSI escape code for blue color
     blue_color_code = "\033[94m"
     # ANSI escape code to reset color
-    reset_color_code = "\033[0m"    
+    reset_color_code = "\033[0m"
     print(blue_color_code + ascii_art + reset_color_code)
-    
+
     ascii_art = """
-     ___    __    _  _ ______    __ __   ___ _  __    __ _     __   
-      | |_||_    |_)|_| |  | |  |_ (_ |_| | |_)(_    /__|_||V||_    
-      | | ||__   |_)| | |  | |__|____)| |_|_|  __)   \\_| |||||__   
-                                                                                                                                                                       
+ ___  __    _  _ ______    __ __   ___ _  __    __ _     __
+ | |_||_    |_)|_| |  | |  |_ (_ |_| | |_)(_    /__|_||V||_
+ | | ||__   |_)| | |  | |__|____)| |_|_|  __)   \\_| |||||__
+
     """
     # ANSI escape code for blue color
     blue_color_code = "\033[94m"
@@ -63,25 +63,24 @@ def main_screen():
    <--------------------'   .  .  .  .  .  .  .  .   '--------------/
      \\                                                             /
       \\_______________________________________________WWS_________/
- 
+
    """
     # ANSI escape code for red color
     red_color_code = "\033[91m"
     # ANSI escape code to reset color
     reset_color_code = "\033[0m"
     print(red_color_code + ascii_art + reset_color_code)
+
+
 class GameBoard:
     """
     Stores the values needed to generate the game board.
     Dictionary stores letter/number values for co-ordinates.
     Stores values for a board outline for user visuals.
     """
-    """
-    
-    """
+
     def __init__(self, board):
         self.board = board
-
 
     @staticmethod
     def co_ordinates():
@@ -115,6 +114,7 @@ class Warship:
 
     def __init__(self, board):
         self.board = board
+
     @staticmethod
     def generate_fleet(board):
         """
@@ -122,7 +122,7 @@ class Warship:
         Generates random integers and assigns 'X' as a ship to each.
         Integers translated into co-ordinates and a ship is placed.
         """
-    
+
         for i in range(8):
             x_row, y_col = random.randint(0, 8), random.randint(0, 8)
             while board[x_row][y_col] == "X":
@@ -130,7 +130,7 @@ class Warship:
                 y_col = random.randint(0, 8)
             board[x_row][y_col] = "X"
         return board
-    
+
     @staticmethod
     def user_fire_mission():
         """
@@ -161,10 +161,10 @@ class Warship:
         Generates computer shot.
         Takes co-ordinates from a random choice of letters and integers.
         """
-        y_col = random.choice(["A", "B", "C", "D", "E", "F", "G", "H", "I"]).upper()
+        choices = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
+        y_col = random.choice(choices).upper()
         x_row = random.randint(0, 8)
         return int(x_row), GameBoard.co_ordinates()[y_col]
-
 
     @staticmethod
     def count_damaged_ships(board):
@@ -195,8 +195,10 @@ def run_game():
     enemy_missiles = 32
 
     while missiles > 0:
-        enemy_target_board.generate_board("Enemy Target")  # Use instance method here
-        user_target_board.generate_board("User Target")  # Use instance method here
+        # Use instance method here
+        enemy_target_board.generate_board("Enemy Target")
+        # Use instance method here
+        user_target_board.generate_board("User Target")
 
         user_x_row, user_y_col = Warship.user_fire_mission()
         while (
@@ -221,7 +223,8 @@ def run_game():
             print(f"You have {missiles} missiles remaining.")
             if missiles == 0:
                 print("We are out of missiles. The enemy fleet has escaped.")
-                user_target_board.generate_board("User Target")  # Use instance method here
+                # Use instance method here
+                user_target_board.generate_board("User Target")
 
         enemy_x_row, enemy_y_col = Warship.enemy_fire_mission()
         while (
@@ -244,7 +247,8 @@ def run_game():
             enemy_missiles -= 1
             if enemy_missiles == 0:
                 print("The enemy has run out of missiles.")
-                enemy_target_board.generate_board("Enemy Target")  # Use instance method here
+                # Use instance method here
+                enemy_target_board.generate_board("Enemy Target")
 
     game_over()
 
@@ -273,6 +277,7 @@ def main():
     """
     main_screen()
     run_game()
+
 
 if __name__ == "__main__":
     main()
