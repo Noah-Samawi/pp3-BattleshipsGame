@@ -3,36 +3,37 @@
 Welcome to the Battleships is a game of logic, with players attempting to sink each others fleet by guessing co-ordinates.
 This version uses a a board generated using Python lists and incorporates a logic engine to allow the computer to fire back at the user.
 
-(Developer: Stuart Wall)
-![Start screen]()
+
+![Start screen](doks/start-screem.png)
 
 [The live link can be found here](https://pp3-battleships-cae1b33910a6.herokuapp.com/)
 ## Table of Content
 
-- [Project Goals](#project-goals)
-    . [User Goals](#user-goals)
-    . [Site Owner Goals](#site-owner-goals)
-- [User Experience](#user-experience)
-    . [Target Audience](#target-audience)
-    . [User Requirements and Expectations](#user-requirements-and-expectations)
-    . [User Stories](#user-stories)
-_ [Battlefleet Game Instructions](#Battlefleet-Game-Instructions)    
-- [Technical Design](#technical-design)
-    . [Flowchart](#flowchart)
-- [Technologies Used](#technologies-used)
-    . [Languages](#languages)
-    . [Frameworks & Tools](#frameworks-&-tools)
-- [Features](#features)
-- [Testing](#validation)
-    . [PEP8 validation](#pep8-validation)
-    . [Testing user stories](#testing-user-stories)
-- [Bugs](#Bugs)
-- [Deployment](#deployment)
-- [Credits](#credits)
-- [Acknowledgments](#acknowledgments)
+1. [Project Goals](#project-goals)
+    1. [User Goals](#user-goals)
+    2. [Site Owner Goals](#site-owner-goals)
+2. [User Experience](#user-experience)
+    1. [Target Audience](#target-audience)
+    2. [User Requirements and Expectations](#user-requirements-and-expectations)
+   3.[User Stories](#user-stories)
+3. [Battlefleet Game Instructions](#Battlefleet-Game-Instructions)    
+4. [Libraries and Technologies Used](#libraries-and-technologies-used)
+    1. [Flowchart](#flowchart)
+5. [Technologies Used](#technologies-used)
+    1. [Languages](#languages)
+    2. [Frameworks & Tools](#frameworks-&-tools)
+6. [Features](#features)
+7. [Testing](#validation)
+    1. [PEP8 validation](#pep8-validation)
+    2. [Testing user stories](#testing-user-stories)
+8. [Bugs](#Bugs)
+9. [Deployment](#deployment)
+10. [Credits](#credits)
+11. [Acknowledgments](#acknowledgments)
 
 ## Project Goals 
 The project goal is to create a logic game using Python.
+
 ### User Goals
 The application user wants to play a logic game.
 
@@ -47,13 +48,8 @@ The application provides a working battleships game for a single user to play ag
 - Users who are looking for a game to pass time on during a break.
 - Older users who are looking for a logic challenge.
 
-### User Requirements and Expectations
-
 ### User Stories
-- To create a personal username.
-- To be able to return to the game with my username.
 - To have an immersive experience.
-- To have real-time feedback when playing the game.
 - To be able to play the game against a computer opponent.
 - To be told when the game has been won or lost.
 - To be able to easily replay the game if wanted.
@@ -89,72 +85,68 @@ Now that you know the rules, it's time to lead your fleet to victory! Good luck,
 ## Technical Design
 
 ### Flowchart
-![Flowchart](Doks/readme/logic-diagram.png)
+![Flowchart](doks/logic-diagram.png)
 
-### Data Modelling
-- The data stored in the Google Spreadsheet is a combination of a username and password entered by the user on the login page.
-
-- A new user will enter their choice of username and password which will be stored in the spreadsheet 'user_data_sheet' in the worksheet 'username'. Their password will be stored in the same spreadsheet but in the 'password' worksheet.
-
-- A returning user will type in their username, the function will check the 'username' worksheet for a matching value and return a welcome message if true. The user will be prompted for a password and the function will, once again, check the 'password' worksheet for a matching value. If the function returns both inputs then the user will be allowed to play the game.
-
-- If the returning user inputs do not match, the user will be taken to the start of the login function where they can try again or enter a new set of credentials.
-
-
-## Technologies Used
+## Libraries and Technologies Used
 
 ### Languages
 - Python 3
 
-### Frameworks & Tools
-- LucidChart
-- Heroku
-- Google Drive: Used as a cloud hosting platform for the spreadsheet.
-- Google Spreadsheet: Used because Python does not have a built in library to store data in an external spreadsheet.
-- pycodestyle: Used as a validation tool instead of pep8 online.
-- gitHub
-- Gitpod
-- Git
+### Python Libraries:
+
+- [random](https://docs.python.org/3/library/random.html?highlight=random#module)
+-random-`random.choice` is used to select arandom word for the game from a text file.
+- [os](https://docs.python.org/3/library/os.html?highlight=os#module-os) 
+  - `os.system` is used in order to clear the terminal when beginning a new game.
+
+- [gspread](https://pypi.org/project/gspread/): to allow communication with Google Sheets. 
+- [requests](https://pypi.org/project/requests): enables data retrieval from APIs.
+- [google.oauth2.service_account](https://google-auth.readthedocs.io/en/stable/index.html):  used to validate credentials and grant access to google service accounts.
+- [pandas](https://pypi.org/project/pandas/) - used for sorting and displaying leaderboard data in user-friendly format.  
+- [pyfiglet](https://pypi.org/project/pyfiglet/0.7/) - for taking ASCII text and rendering it into ASCII art fonts.
+- [colorama](https://pypi.org/project/colorama/) - for adding colour to terminal text.
+
+### Programs Used
+
+- [GitHub](https://github.com/) - used for version control.
+- [Heroku](https://dashboard.heroku.com/apps) -  used to deploy the live project.
+- [Lucidchart](https://lucid.app/documents#/dashboard) -  used to create the game flowchart
+- [Code institute Herokuapp](https://pep8ci.herokuapp.com/) used to validate pop Issues
+- [Grammerly](https://app.grammarly.com/) - used to proof read the README.md
 
 ## Features
 
 ### Welcome Message
 - Shows a welcome message.
 User Stories covered
-<img src="">
-
-### Username/Password Input
-- Prompts a user to input a username and password.
-- Returning users can have their credentials recoved from a spreadsheet.
-User Stories covered
-<img src="">
+<img src="doks/welcom-message.png">
 
 ### Battleships Screen 
 - Shows an ASCII art warship and logo.
 User Stories covered
-<img src="">
+<img src="doks/battleships-screen.png">
 
 ### Game Board
 - Shows the generated game boards for the user and the computer.
 User Stories covered
-<img src="">
+<img src="doks/game_boards.png">
 
 ### Game Inputs
 - Allows the user to input their guesses and feedsback the result.
 - Shows the computer's guess.
 User Stories covered: 3, 4, 5
-<img src="">
+<img src="doks/game_inputs.png">
 
 ### Game Over
 - Shows the end-of-game state to the user once a victory condition has been met.
 - Allows user to retry the game or to quit the program.
 User Stories covered
-<img src="">
+<img src="doks/game_over.png">
 
 
-## Validation
+## Testing
 
-### PEP8 validation
+### PEP8 Testing
 At the time of creation, the PEP8 online Python validation website was inoperative. To validate the code, a PEP8 validator that is built into the GitPod Workspace was used.
 
 - Run the command 'pip3 install pycodestyle'. (Note that this extension may already be installed, in which case this command will do nothing.)
@@ -164,52 +156,28 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 - Select 'pycodestyle' from the list.
 - PEP8 errors will now be underlined in red, as well as being listed in the PROBLEMS tab beside the terminal.
 
-There were no errors or warnings flagged in login.py.
-There were no errors or warnings flagged in test_login.py
-15 yellow warnings were flagged in run.py. These are down to the symbol combinations used in the ASCII art and logo. These are printed direct to the console and not used in any functions.
+### Code institute Herokuapp
+The python files have all been passed through [Code institute Herokuapp](https://pep8ci.herokuapp.com/#). All python files were checked with no errors reported. See screen show below:
 
-- To have an immersive experience.
+![Code Testing](doks/code-testing.png)
+
+1. To have real-time feedback when playing the game.\
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Welcome Screen. | Input username. | Console prints message welcoming the user as Admiral. | Working as implemented. |
-| Main Screen. | Console prints ASCII warship and game logo. | Working as implemented. |
-| Game Board. | Generates upon game start. | Generates a board similar to the board game. | Working as implemented. |
-| Game Inputs. | User inputs co-ordinates to fire on. | Feedback uses military terminology. | Working as implemented. |
-
-<details><summary>Welcome Screen</summary>
-<img src="">
-</details>
-<details><summary>Main Screen</summary>
-<img src="">
-</details>
-<details><summary>Game Board</summary>
-<img src="">
-</details>
-<details><summary>Game Inputs</summary>
-<img src="">
-</details>
-
-- To have real-time feedback when playing the game.\
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |\
-|-------------|------------|---------------------|-------------------|\
-| Welcome Screen. | Input username and password. | Console feedsback messages to user. | Working as implemented. |\
 | Game Board. | Generates at the start of the game and refreshes after every turn. | Game board is printed and updated with user and computer inputs after each turn. | Working as implemented. |
 | Game Inputs. | User inputs their choice of co-ordinates. Computer does the same. | Results are printed back to the user after each turn. | Working as implemented. |
 
-<details><summary>Welcome Screen</summary>
-<img src="">
 </details>
 <details><summary>Game Board</summary>
-<img src="">
+<img src="doks/user_test_1_board.png">
 </details>
 <details><summary>Game Inputs</summary>
-<img src="">
+<img src="doks/user_test_1_board.png">
 </details>
 
 
-5. To be able to play the game against a computer opponent.
+2. To be able to play the game against a computer opponent.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -217,14 +185,14 @@ There were no errors or warnings flagged in test_login.py
 | Game Inputs. | Computer generates a shot after the user has taken a turn. | Results are updated on the board and printed back to the user after each computer turn. | Working as implemented. |
 
 <details><summary>Game Board</summary>
-<img src="">
+<img src="doks/user_test_2_board.png">
 </details>
 <details><summary>Game Inputs</summary>
-<img src="">
+<img src="doks/user_test_2_input.png">
 </details>
 
 
-- To be told when the game has been won or lost.
+3. To be told when the game has been won or lost.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -232,13 +200,13 @@ There were no errors or warnings flagged in test_login.py
 | Game Over. | After a game over condition is met. | Results are updated on the board and printed back to the user after each computer turn. | Working as implemented. |
 
 <details><summary>Game Inputs</summary>
-<img src="">
+<img src="doks/user_test_3_inputs.png">
 </details>
 <details><summary>Game Over</summary>
-<img src="">
+<img src="doks/user_test_3_game_over.png">
 </details>
 
-7. To be able to easily replay the game if wanted.
+4. To be able to easily replay the game if wanted.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 
@@ -246,16 +214,10 @@ There were no errors or warnings flagged in test_login.py
 | Game Over. | After a game over condition is met. User inputs Y or N | Input of Y re-runs the game. Input of N exits the program. | Working as implemented. |
 
 <details><summary>Game Over</summary>
-<img src="">
+<img src="doks/user_test_4_replay.png">
 </details>
 
-## Bugs
 
-| **Bug** | **Fix** |
-| ----------- | ----------- |
-| New and Old User functions activated twice. | Moved the function calls to the Login function if/elif statements. |
-| Missile counter decreased by two each round. | Seperated missile variable into two; one for the user and computer. |
-| Check Login function would not validate user input. | Changed syntax of the Login function if/elif statements. |
 
 ## Deployment
 Use the following steps to deploy the poject to Heroku:
