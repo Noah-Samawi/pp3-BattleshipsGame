@@ -220,7 +220,7 @@ The python files have all been passed through [Code institute Herokuapp](https:/
 
 
 ## Deployment
-The site was deployed via [Heroku](https://dashboard.heroku.com/apps), and the live link can be found here: [Word-Py](https://word-py.herokuapp.com/)
+The site was deployed via [Heroku](https://dashboard.heroku.com/apps), and the live link can be found here: [Battleships-Game](https://pp3-battleships-cae1b33910a6.herokuapp.com/)
 
 Before deploying to Heroku pip3 freeze > requirements.txt was used to add all the dependencies required to the requirements.txt file. This is required for the game to run on Heroku.
 
@@ -251,11 +251,12 @@ The site is now live and operational.
 - [Knowledge Mavens](https://www.youtube.com/watch?v=xz9GrOwQ_5E) 
 - [W3Schools](https://www.w3schools.com/)  
 - [Stack Overflow](https://stackoverflow.com/)
-- [Count occurrences of a character in a string](https://stackoverflow.com/questions/1155617/count-the-number-of-occurrences-of-a-character-in-a-string) - It's about Count the number of occurrences of a character in a string.
+- [Count occurrences of a character in a string](https://stackoverflow.com/questions/1155617/count-the-number-of-occurrences-of-a-character-in-a-string) - How to Count the number of occurrences of a character in a string.
 - [How to set up environment variables in GitPod](https://code-institute-room.slack.com/archives/CP07TN38Q/p1576743956008500) - This post from anna_ci in the Code Institute slack channel was very informative and enabled me to set up my environment variables correctly for my API key. 
 - [ASCII Art](https://www.asciiart.eu/art-and-design/borders) - I used this ASCII art for the border around the instructions.
 - [Oxford Dictionary API Docs](https://developer.oxforddictionaries.com/documentation/getting_started) - This documentation came in useful when implementing the Oxford Dictionary API.
 - I followed the steps in the Code Institute Python walkthrough project - Love Sandwiches when setting up my Google Sheets API.
+- [Diagrams App](https://app.diagrams.net) used to build the logic diagrams for the game.
 
 ## Acknowledgments
 I would like to take the opportunity to thank:
