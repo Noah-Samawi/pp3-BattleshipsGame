@@ -1,6 +1,6 @@
 # Battleships
 
-Welcome to the Battleships is a game of logic, with players attempting to sink each others fleet by guessing co-ordinates.
+Battleships is a game of logic, with players attempting to sink each others fleet by guessing co-ordinates.
 This version uses a a board generated using Python lists and incorporates a logic engine to allow the computer to fire back at the user.
 
 
