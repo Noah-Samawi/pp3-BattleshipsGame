@@ -7,6 +7,7 @@ import random
 # imports google spreadsheet and google credentials APIs
 import gspread
 from google.oauth2.service_account import Credentials
+import os
 
 
 # Global variables assigned to allow access through Google APIs to gspread.
@@ -195,9 +196,8 @@ def run_game():
     enemy_missiles = 32
 
     while missiles > 0:
-        # Use instance method here
+
         enemy_target_board.generate_board("Enemy Target")
-        # Use instance method here
         user_target_board.generate_board("User Target")
 
         user_x_row, user_y_col = Warship.user_fire_mission()
@@ -223,7 +223,7 @@ def run_game():
             print(f"You have {missiles} missiles remaining.")
             if missiles == 0:
                 print("We are out of missiles. The enemy fleet has escaped.")
-                # Use instance method here
+
                 user_target_board.generate_board("User Target")
 
         enemy_x_row, enemy_y_col = Warship.enemy_fire_mission()
@@ -247,7 +247,7 @@ def run_game():
             enemy_missiles -= 1
             if enemy_missiles == 0:
                 print("The enemy has run out of missiles.")
-                # Use instance method here
+
                 enemy_target_board.generate_board("Enemy Target")
 
     game_over()

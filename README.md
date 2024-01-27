@@ -219,43 +219,44 @@ The python files have all been passed through [Code institute Herokuapp](https:/
 
 
 ## Deployment
-Use the following steps to deploy the poject to Heroku:
-- Use the "pip freeze -> requiremnts.txt" command in the gitPod terminal; to save any libraries that need to be installed to the project files in Heroku.
-- Login or create a Heroku account.
-- Click the "New" button in the upper right corner and select "Create New App".
-- Choose an app name and your region and click "Create App". Note: the app name must be unique.
-- Go to the "Settings" tab, add the python build pack and then the node.js build pack. This is to ensure the project functions correctly with the Code Institute pre-installed template.
-- Create a "Config VAR" with the 'CREDS' key and the enter the value of the creds.json file.
-- Create a second "Config VAR" with the key of 'PORT' and value of '8000'
-- Go to the "Deploy" tab and pick GitHub as a deployment method.
-- Search for a repository to connect to.\
-- Click enable automatic deploys and then deploy branch.
-- Wait for the app to build and then click on the "View" link.
+The site was deployed via [Heroku](https://dashboard.heroku.com/apps), and the live link can be found here: [Word-Py](https://word-py.herokuapp.com/)
 
-You can fork the repository by following these steps:
-- Go to the GitHub repository.\
-- Click on the Fork button in the upper right-hand corner.
+Before deploying to Heroku pip3 freeze > requirements.txt was used to add all the dependencies required to the requirements.txt file. This is required for the game to run on Heroku.
 
-You can clone the repository by following these steps:
-- Go to the GitHub repository.
-- Locate the Code button above the list of files and click it.
-- Select if you prefer to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard.
-- Open Git Bash.
-- Change the current working directory to the one where you want the cloned directory.
-- Type git clone and paste the URL from the clipboard ($ git clone https://github.com/Noah-Samawi/pp3-BattleshipsGame.git.
-- Press Enter to create your local clone.
+The following steps were then taken:
+1. Log in to [Heroku](https://dashboard.heroku.com/apps) or create an account.
+2. On the main page click the button labelled New in the top right corner and from the drop-down menu select "Create New App".
+3. Enter a unique and meaningful app name.
+4. Next select your region.
+5. Click on the Create App button.
+6. Click on the Settings Tab and scroll down to Config Vars.
+7. Click Reveal Config Vars and enter port into the Key box and 8000 into the Value box and click the Add button.
+8. Input CREDS and the content of your Google Sheet API creds file as another config var and click add.
+9. In the next Key box enter OXFORD_API_APP_ID and add your unique ID to the value box. 
+10. In the next Key box enter OXFORD_API_APP_KEY and add your unique key to the value box. 
+11. Next, scroll down to the Buildpack section click Add Buildpack select Python and click Save Changes
+12. Repeat step 11 to add node.js. Note: The Buildpacks must be in the correct order. If not click and drag them to move into the correct order.
+13. Scroll to the top of the page and choose the Deploy tab.
+14. Select Github as the deployment method.
+15. Confirm you want to connect to GitHub.
+16. Search for the repository name and click the connect button.
+17. Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Manually deployed branches will need re-deploying each time the repo is updated.
+18. Click View to view the deployed site.
+
+The site is now live and operational.
 
 ## Credits
-
-### Media
-- ASCII art: https://asciiart.website/index.php?art=transportation nautical
-
-### Code
-- Code Institute Python lessons.
-- Code Institute Love Sandwiches project.
-- Knowledge Mavens https://www.youtube.com/watch?v=xz9GrOwQ_5E
+### Resources Used
+- [Knowledge Mavens](https://www.youtube.com/watch?v=xz9GrOwQ_5E) 
+- [W3Schools](https://www.w3schools.com/)  
+- [Stack Overflow](https://stackoverflow.com/)
+- [Count occurrences of a character in a string](https://stackoverflow.com/questions/1155617/count-the-number-of-occurrences-of-a-character-in-a-string) - It's about Count the number of occurrences of a character in a string.
+- [How to set up environment variables in GitPod](https://code-institute-room.slack.com/archives/CP07TN38Q/p1576743956008500) - This post from anna_ci in the Code Institute slack channel was very informative and enabled me to set up my environment variables correctly for my API key. 
+- [ASCII Art](https://www.asciiart.eu/art-and-design/borders) - I used this ASCII art for the border around the instructions.
+- [Oxford Dictionary API Docs](https://developer.oxforddictionaries.com/documentation/getting_started) - This documentation came in useful when implementing the Oxford Dictionary API.
+- I followed the steps in the Code Institute Python walkthrough project - Love Sandwiches when setting up my Google Sheets API.
 
 ## Acknowledgments
 I would like to take the opportunity to thank:
 - My mentor Antonio Rodriguez for his feedback, advice, guidance and support.
-- Jim, Sawyer, and the other fantasic members of Code Institute's community team.}
+- The Code Institute slack community for their quick responses and very helpful feedback! }
