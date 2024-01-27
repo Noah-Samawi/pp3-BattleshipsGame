@@ -100,17 +100,13 @@ Now that you know the rules, it's time to lead your fleet to victory! Good luck,
   - `os.system` is used in order to clear the terminal when beginning a new game.
 
 - [gspread](https://pypi.org/project/gspread/): to allow communication with Google Sheets. 
-- [requests](https://pypi.org/project/requests): enables data retrieval from APIs.
 - [google.oauth2.service_account](https://google-auth.readthedocs.io/en/stable/index.html):  used to validate credentials and grant access to google service accounts.
-- [pandas](https://pypi.org/project/pandas/) - used for sorting and displaying leaderboard data in user-friendly format.  
-- [pyfiglet](https://pypi.org/project/pyfiglet/0.7/) - for taking ASCII text and rendering it into ASCII art fonts.
-- [colorama](https://pypi.org/project/colorama/) - for adding colour to terminal text.
 
 ### Programs Used
 
 - [GitHub](https://github.com/) - used for version control.
 - [Heroku](https://dashboard.heroku.com/apps) -  used to deploy the live project.
-- [Lucidchart](https://lucid.app/documents#/dashboard) -  used to create the game flowchart
+- [Diagrams](https://app.diagrams.net) -  used to create the game flowchart
 - [Code institute Herokuapp](https://pep8ci.herokuapp.com/) used to validate pop Issues
 - [Grammerly](https://app.grammarly.com/) - used to proof read the README.md
 
@@ -161,7 +157,8 @@ The python files have all been passed through [Code institute Herokuapp](https:/
 
 ![Code Testing](Doks/code-testing.png)
 
-1. To have real-time feedback when playing the game.\
+
+1. To have real-time feedback when playing the game.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -175,7 +172,6 @@ The python files have all been passed through [Code institute Herokuapp](https:/
 <details><summary>Game Inputs</summary>
 <img src="Doks/user_test_1_board.png">
 </details>
-
 
 2. To be able to play the game against a computer opponent.
 
@@ -261,4 +257,4 @@ The site is now live and operational.
 ## Acknowledgments
 I would like to take the opportunity to thank:
 - My mentor Antonio Rodriguez for his feedback, advice, guidance and support.
-- The Code Institute slack community for their quick responses and very helpful feedback! }
+- The Code Institute slack community for their quick responses and very helpful feedback!}
