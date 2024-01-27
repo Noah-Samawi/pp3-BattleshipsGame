@@ -15,8 +15,8 @@ This version uses a a board generated using Python lists and incorporates a logi
 - [User Experience](#user-experience)
     . [Target Audience](#target-audience)
     . [User Requirements and Expectations](#user-requirements-and-expectations)
-   .[User Stories](#user-stories)
-- [Battlefleet Game Instructions](#Battlefleet-Game-Instructions)    
+    . [User Stories](#user-stories)
+- [Battlefleet Game Instructions](#battlefleet-game-instructions)    
 - [Libraries and Technologies Used](#libraries-and-technologies-used)
     . [Flowchart](#flowchart)
 - [Technologies Used](#technologies-used)
@@ -55,7 +55,7 @@ The application provides a working battleships game for a single user to play ag
 
 ## Battlefleet Game Instructions
 
-Welcome to Battlefleet, Admiral! Your mission is to lead your fleet against the enemy and sink all their warships before they sink yours. The game is played on a 9x9 grid, with each square identified by a letter (A-I) and a number (1-9). Your fleet consists of 8 warships strategically placed on the grid. The enemy fleet is also positioned randomly.
+Welcome to Battlefleets, Admiral! Your mission is to lead your fleet against the enemy and sink all their warships before they sink yours. The game is played on a 9x9 grid, with each square identified by a letter (A-I) and a number (1-9). Your fleet consists of 8 warships strategically placed on the grid. The enemy fleet is also positioned randomly.
 
 ### Main Screen
 When you start the game, you'll be greeted with the main screen, featuring an ASCII art dashboard and instructions to start the game. Take a moment to review the fleet and prepare for battle.
@@ -81,6 +81,7 @@ When the game concludes, a "Game Over" message will appear. You'll be prompted t
 
 Have Fun Admiral!
 Now that you know the rules, it's time to lead your fleet to victory! Good luck, Admiral, and may the seas be in your favor!
+
 ## Technical Design
 
 ### Flowchart
