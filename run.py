@@ -7,8 +7,6 @@ import random
 # imports google spreadsheet and google credentials APIs
 import gspread
 from google.oauth2.service_account import Credentials
-import os
-
 
 # Global variables assigned to allow access through Google APIs to gspread.
 SCOPE = [

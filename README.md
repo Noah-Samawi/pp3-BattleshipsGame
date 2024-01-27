@@ -96,9 +96,6 @@ Now that you know the rules, it's time to lead your fleet to victory! Good luck,
 
 - [random](https://docs.python.org/3/library/random.html?highlight=random#module)
 -random-`random.choice` is used to select arandom word for the game from a text file.
-- [os](https://docs.python.org/3/library/os.html?highlight=os#module-os) 
-  - `os.system` is used in order to clear the terminal when beginning a new game.
-
 - [gspread](https://pypi.org/project/gspread/): to allow communication with Google Sheets. 
 - [google.oauth2.service_account](https://google-auth.readthedocs.io/en/stable/index.html):  used to validate credentials and grant access to google service accounts.
 
