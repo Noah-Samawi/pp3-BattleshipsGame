@@ -7,6 +7,7 @@ This version uses a a board generated using Python lists and incorporates a logi
 ![Start screen](Doks/start-screem.png)
 
 [The live link can be found here](https://pp3-battleships-cae1b33910a6.herokuapp.com/)
+
 ## Table of Content
 
 - [Project Goals](#project-goals)
