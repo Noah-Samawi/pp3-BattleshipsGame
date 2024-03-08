@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "battleships-411710",
+    "private_key_id": "e35d23567fafc6384a019198619705692829323f",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDLbMIR//oTevhr\nlXHbD0SVLkiCQR7P1yiqHRQy7RksQarRIxHOVRFU6WIr+7ZrliZcsLO4eRX5U7di\nJnmwxemj0qHxGBT47ZAwWS/xNmlcL0AhSXakoFJBX4NNGhZwAU6DM+X2cE1BHeHs\nwhcjafCg4m4Q+km/xj85FqBx3mOEwnZV6wxMAy/cliE3OAW778RNasJ3b3H4vO3e\n3rGxR7A/R3Zt20xPLExMRFGeV1fnabuZn4gTDMeXFl+uI1NKxSHtn3AMADZc+TdC\nN6Qsm0Y3OEuvh0h3cvTroFaVm6cRiTN9f2odVHIgWfA+qzgXmenfoOPfWxmlWgGu\nAsiPQ5+jAgMBAAECggEAG8ZbkHdEZFYvxrSuySutAAzD5AZTLX/28pR/gQfkHiml\n0oyjbj9+2yVLJ66PH40ZQMz0RPWXcqWjuM2AY7VUwMROIyvYFTg5LeNyNdDpktIg\nGKC+B8fyDdtQ2Kf9X0lLuINPXJYZyOXKcU1Q48oftj/O/8IaFrVRRZCu0yKmW5ED\n99c02IYwWT3VR43jrhPo2vPwD/e80T8JctLa8tzPCMCzrWY2bIg28PrF4R3PJ4DN\nGTwgstb7Bt7Zpa1baj1SNpcpWS0sx1C0zWtdu8MBz5ceNv1CCScSdjvDbAfKK+Hu\nxVZxlUpXqa9q9KZBWXbNjUCnuDaxviMeMqrEpqRjOQKBgQDnHia84XPeAy21/PgA\n9XeK+7+0VkfKTN74mI+nlU0gexXoC1whDGbW2TsMoUinEoXGIhn5nMdf0fB2fYiq\nLAg845Y9oXwTrweMIgsYNanoEUOGoOgrTtlx46pREKE3Rqmjkl7qW7jfw5lVW/W/\n+YMBga4163K9t2g5ABll4fZGCwKBgQDhU1w11AgPGx9w4FYFn/zYBKwjG4eFY3E0\nQwY4pAXCob3IDtspheE6xCzjIQwR7VabfDAlRYjzZGBNQmOwrf8bd0sXKTDtRqCG\nTBlADlLxMmOM2etci3v73h+GOVCtm3cAKyOBWgjyMpbw8x/gXjU5NJtDzVIwyqZC\noxRLgY2DyQKBgEFE1pPI57vvEd2vTyqWJ+hsKDt5klSjWOTD0O320A04NXuOmboL\nko9iUbbDZY0pQfYucz928ycwVsRft1S3kqv/adKF5FB6wZrlklSH8y/CkFtY3bg9\nUFNFhDfYhm7h2c6D66IrvQ4UYx0kF0bb5A9s3BIGKCVDwn82c/W91pr5AoGAIuaN\nhszjvqs90Hb++/oO6Mq4euudrxx7AVRMV2OYfNAenCko6yKQg1C1fyy0OOahHo46\nytsdXk2y2OSqmkgpFnEA0YKQ0H+7B3IsCw7s6+0ZHEz4tqnoN1ftXBXumCVXZlBI\nPJXcgt8xH/sYeeE9rzGlxve7flE1NWcbEqLrb3kCgYAZezlHTcpZBZLGtw9DAxPh\nmGSJQHBbP4xQLgV9qBi8VCvsY+gDBCZbaRW2qsbSLBUwomtZtlcOubY3NvIuoMzO\nk7P6fSmn3fbTagKqHVMRsUl0bag0kRESU33laTMoMDjAiZZl+FX7zHL1vdAWccI1\ndFz7bTBOqZQXTscrG1Nk8A==\n-----END PRIVATE KEY-----\n",
+    "client_email": "battleships@battleships-411710.iam.gserviceaccount.com",
+    "client_id": "106885935387325783056",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/battleships%40battleships-411710.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }
